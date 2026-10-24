@@ -1,0 +1,11 @@
+{
+  "name": "ingenium-2.0",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Ingenium 2.0 — plataforma de estudo local-first (site estático, sem build).",
+  "scripts": {
+    "start": "node serve.mjs",
+    "test": "node --test"
+  }
+}

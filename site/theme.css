@@ -1,0 +1,116 @@
+/* Classic palette restores the original cream/lime UI. Purple remains one tap away. */
+:root[data-theme="classic"] {
+  --ink: #132238;
+  --ink-soft: #4b5b70;
+  --paper: #f7f5ef;
+  --paper-2: #efeee8;
+  --white: #fffdf8;
+  --line: #dfe1da;
+  --lime: #b8f36b;
+  --lime-dark: #416f32;
+  --blue: #5b87f6;
+  --blue-soft: #e7edff;
+  --coral: #f17868;
+  --coral-soft: #ffebe6;
+  --yellow: #f4c956;
+  --teal: #69c7bb;
+  --violet: #b29ae8;
+  --purple: #5b87f6;
+  --purple-deep: #132238;
+  --lavender: #e7edff;
+  --lavender-soft: #f3f6ff;
+  --shadow: 0 16px 40px rgba(19,34,56,.09);
+}
+:root[data-theme="classic"] body {
+  background: var(--paper);
+  color: var(--ink);
+}
+:root[data-theme="classic"] ::selection { background: #d7f7a8; color: var(--ink); }
+:root[data-theme="classic"] .brand-mark {
+  background: var(--lime);
+  color: var(--ink);
+  box-shadow: none;
+}
+:root[data-theme="classic"] .button-primary {
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 0 6px 0 #081422;
+}
+:root[data-theme="classic"] .class-head .button-primary { background: var(--lime); color: var(--ink); box-shadow: 0 5px 0 #7caa45; }
+:root[data-theme="classic"] .button-primary:hover { box-shadow: 0 4px 0 #081422; }
+:root[data-theme="classic"] .button-lime {
+  background: var(--lime);
+  color: var(--ink);
+  box-shadow: 0 5px 0 #7caa45;
+}
+:root[data-theme="classic"] .top-study:hover,
+:root[data-theme="classic"] .top-class:hover { border-color: #9cbd72; color: var(--lime-dark); }
+:root[data-theme="classic"] .study-thread {
+  border-color: var(--line);
+  background: linear-gradient(150deg, #fbfaf4, #fffdf8 62%);
+  box-shadow: var(--shadow);
+}
+:root[data-theme="classic"] .study-thread-count { border-color: var(--line); background: var(--white); color: var(--lime-dark); }
+:root[data-theme="classic"] .study-thread-group { border-color: var(--line); background: var(--white); }
+:root[data-theme="classic"] .summary-guided {
+  border-color: var(--line);
+  background: linear-gradient(150deg, var(--white), #fbfaf4);
+}
+:root[data-theme="classic"] .summary-guided-analogy { border-left-color: var(--lime-dark); background: #f3f8e8; }
+:root[data-theme="classic"] .summary-guided-analogy span,
+:root[data-theme="classic"] .summary-guided-app span { color: var(--lime-dark); }
+:root[data-theme="classic"] .summary-guided-check > span { background: var(--ink); color: var(--lime); }
+:root[data-theme="classic"] .study-subject-tag.math { background: #f3ecff; color: #5b2a9c; }
+:root[data-theme="classic"] .study-subject-tag.physics { background: #e7edff; color: #2d4f9e; }
+:root[data-theme="classic"] .study-subject-tag.algebra { background: #eef1ff; color: #3e4d9e; }
+:root[data-theme="classic"] .study-subject-tag.chemistry { background: #e6f5ef; color: #276b52; }
+:root[data-theme="classic"] .study-subject-tag.general { background: #f0eee6; color: #5e594c; }
+:root[data-theme="classic"] .summary-continuity {
+  border-color: var(--line);
+  background: linear-gradient(150deg, #f4f8ea, #fffdf8 72%);
+}
+:root[data-theme="classic"] .summary-continuity::after { background: radial-gradient(circle, rgba(184,243,107,.25), transparent 70%); }
+:root[data-theme="classic"] .summary-continuity-badge { background: var(--ink); color: var(--lime); }
+:root[data-theme="classic"] .summary-continuity-badge strong { color: var(--lime); }
+:root[data-theme="classic"] .summary-continuity-badge.is-first { background: linear-gradient(145deg, #3f6b2f, #2c4a20); color: #f2ffe3; }
+:root[data-theme="classic"] .summary-continuity-badge.is-first strong { color: var(--lime); }
+:root[data-theme="classic"] .summary-continuity-main > p { color: var(--ink-soft); }
+:root[data-theme="classic"] .summary-continuity-links a { border-color: var(--line); background: var(--white); }
+:root[data-theme="classic"] .summary-continuity-links a:hover { border-color: #9cbd72; background: #f7fbf0; }
+:root[data-theme="classic"] .summary-continuity-links a > svg { color: var(--lime-dark); }
+:root[data-theme="classic"] .summary-continuity-terms { border-color: var(--line); background: var(--white); }
+:root[data-theme="classic"] .summary-continuity-label { color: #5f6b4c; }
+:root[data-theme="classic"] .summary-continuity-chips span { background: #f1f0e7; color: #4f5b45; }
+:root[data-theme="classic"] .summary-continuity-chips span.is-shared { background: #e8f5d5; color: #3f6428; }
+:root[data-theme="classic"] .summary-continuity-chips svg { color: var(--lime-dark); }
+:root[data-theme="classic"] .class-head {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(184,243,107,.12), transparent 20rem),
+    linear-gradient(135deg, #0e1b2c, #1b3248 62%, #2a4a3b) !important;
+}
+:root[data-theme="classic"] .class-head::after { border-color: rgba(184,243,107,.14); }
+:root[data-theme="classic"] .class-role-chip.is-teacher { background: var(--lime); color: var(--ink); }
+:root[data-theme="classic"] .class-code-chip { background: rgba(255,255,255,.12); }
+:root[data-theme="classic"] .home-intro::before,
+:root[data-theme="classic"] .home-intro::after { opacity: .35; }
+:root[data-theme="classic"] .present-page { background: #0d1726; }
+
+.theme-toggle {
+  flex: none;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--ink);
+  transition: background .16s ease, color .16s ease, border-color .16s ease;
+}
+.theme-toggle:hover { border-color: var(--lime-dark); color: var(--lime-dark); }
+@media (max-width: 720px) {
+  .theme-toggle { width: 34px; height: 34px; }
+}
+@media (max-width: 390px) {
+  .theme-toggle { width: 32px; height: 32px; }
+}

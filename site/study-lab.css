@@ -1,0 +1,33 @@
+.summary-lab-scene {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  max-width: 52%;
+  padding: 7px 10px;
+  border: 1px solid rgba(214,188,255,.22);
+  border-radius: 999px;
+  background: rgba(26,14,44,.72);
+  color: #e4d3ff;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-align: right;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+.summary-lab-hint { color: rgba(238, 226, 255, .82); text-shadow: 0 1px 6px rgba(18, 8, 28, .95); }
+.summary-lab-detail-body { color: #d3c5e4; }
+.summary-lab-detail-label { color: #b9a1d1; }
+.summary-lab-detail-app p { color: #cbbadd; }
+.summary-lab-detail-scene-app {
+  margin: 8px 0 0;
+  color: #b9a1d1;
+  font-size: 9px;
+  line-height: 1.5;
+}
+.summary-lab-detail-app strong { font-size: 11px; }
+.summary-lab-detail-app p { font-size: 10px; }
+@media (max-width: 520px) {
+  .summary-lab-scene { display: none; }
+  .summary-lab-hint { color: rgba(240, 229, 255, .9); font-size: 8px; }
+}

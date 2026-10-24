@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f7f5ef" />
+    <meta name="description" content="Ingenium 2.0 — aprendizagem visual para mecatrónica, com Matemática, Física, Química e engenharia." />
+    <meta name="author" content="Ingenium" />
+    <title>Ingenium 2.0 · Mecatrónica</title>
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg" />
+    <link rel="apple-touch-icon" href="/public/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kalam:wght@300;400;700&family=DM+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script>
+      // Classic is the original cream/lime interface. Purple remains one tap away.
+      (() => {
+        let theme = 'classic';
+        try {
+          if (localStorage.getItem('ingenium2-theme-v1') === 'purple') theme = 'purple';
+        } catch { /* storage may be blocked; classic remains the default */ }
+        document.documentElement.dataset.theme = theme;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', theme === 'purple' ? '#f6effc' : '#f7f5ef');
+      })();
+    </script>
+    <link rel="stylesheet" href="/styles.css?v=class-v12" />
+    <link rel="stylesheet" href="/classroom.css?v=class-v12" />
+    <link rel="stylesheet" href="/audio.css?v=audio-v4" />
+    <link rel="stylesheet" href="/study-lab.css?v=lab-v4" />
+    <link rel="stylesheet" href="/theme.css?v=theme-v4" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar" id="topbar"></header>
+      <main id="app" tabindex="-1" aria-live="polite"><div class="boot-skeleton" aria-label="A preparar o percurso"><div class="sk sk-label"></div><div class="sk sk-title"></div><div class="sk sk-copy"></div><div class="sk sk-hero"></div><div class="sk sk-row"></div></div></main>
+      <nav class="bottom-nav" id="bottom-nav" aria-label="Navegação principal"></nav>
+      <button type="button" id="nav-toggle" class="nav-toggle" data-action="toggle-nav" aria-expanded="true" aria-label="Ocultar navegação">⌄</button>
+    </div>
+    <footer class="site-credit" id="site-credit">
+      <span>INGENIUM 2.0</span>
+      <span>Criado pelos irmãos Bulezi — <strong>Rafael Bulezi</strong> &amp; <strong>Afonso Bulezi</strong> · Created by the Bulezi brothers.</span>
+    </footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script>
+      // If the app fails before its first render, replace the infinite skeleton with
+      // a readable diagnostic. This also catches module-import and startup failures.
+      (() => {
+        const report = (message) => {
+          const app = document.getElementById('app');
+          if (!app || !app.querySelector('.boot-skeleton')) return;
+          app.innerHTML = '<section class="page" role="alert" style="padding:2rem 1rem"><p class="eyebrow">INGENIUM 2.0 · STARTUP</p><h1 style="font-size:1.6rem">A aplicação não conseguiu iniciar.</h1><p>O ecrã de carregamento foi interrompido por um erro JavaScript. Atualiza esta página depois de corrigirmos o problema.</p><p style="font-size:.8rem;overflow-wrap:anywhere"><strong>Detalhe técnico:</strong> <code id="startup-error-detail"></code></p></section>';
+          const detail = document.getElementById('startup-error-detail');
+          if (detail) detail.textContent = String(message || 'Erro de inicialização sem mensagem.');
+        };
+        window.addEventListener('error', (event) => {
+          if (event.target !== window && !String(event.target?.src || '').includes('/src/main.js')) return;
+          report(event.message || 'Falha ao carregar o módulo principal.');
+        });
+        window.addEventListener('unhandledrejection', (event) => {
+          report(event.reason?.message || event.reason || 'Falha assíncrona ao iniciar.');
+        });
+      })();
+    </script>
+    <script type="module" src="/src/main.js?v=class-v12"></script>
+  </body>
+</html>
